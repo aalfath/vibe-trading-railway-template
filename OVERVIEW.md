@@ -31,7 +31,7 @@ This template runs one service: the Vibe-Trading server (FastAPI backend plus th
 **Variables you set at deploy:**
 
 * `OPENROUTER_API_KEY` (required): your OpenRouter key. Default model `deepseek/deepseek-v4-pro`; change `LANGCHAIN_MODEL_NAME` to any OpenRouter model id.
-* To use another provider, set `LANGCHAIN_PROVIDER` (for example `openai`, `deepseek`, `anthropic`, `gemini`), its key variable (for example `OPENAI_API_KEY`) and `LANGCHAIN_MODEL_NAME`, in the deploy form or later in the service's Variables. You can also change provider and model in the app's Settings page.
+* To use another provider, set `LANGCHAIN_PROVIDER` (for example `openai`, `deepseek`, `anthropic`, `gemini`), its key variable (for example `OPENAI_API_KEY`) and `LANGCHAIN_MODEL_NAME`, in the deploy form or later in the service's Variables. Change these in Railway's Variables, not in the app's Settings page: Railway variables take precedence at every restart, so a provider, model or key changed only in Settings lasts until the next restart.
 
 **After deploy:** open the service's Variables tab, copy `API_AUTH_KEY`, open the public URL, go to **Settings**, paste it under API key and save. Every API call, including from scripts, sends `Authorization: Bearer YOUR-API-AUTH-KEY`. The interactive API docs are at `https://YOUR-DOMAIN/docs`.
 

@@ -24,6 +24,8 @@ No database service is needed: Vibe-Trading stores everything in SQLite and file
 | `API_AUTH_KEY` | `${{secret(40)}}` | Generated. Locks the API and web UI. Paste it once in the app's **Settings** |
 | `PORT` | `8899` | Port the server listens on |
 
+Change provider, model and keys here in Railway's **Variables**, not in the app's Settings page: Railway variables win at every restart, so a change made only in Settings lasts until the next restart.
+
 Optional market-data keys you can add later: `TUSHARE_TOKEN` (China A-shares), `FMP_API_KEY`, `FRED_API_KEY`. Yahoo (US/HK stocks) and OKX (crypto) need no key.
 
 ## After deploy
